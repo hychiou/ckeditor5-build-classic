@@ -29,6 +29,8 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor.js';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -56,7 +58,9 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	FontColor,
+	FontSize
 ];
 
 // Editor configuration.
@@ -65,19 +69,14 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
+			'fontColor',
+			'fontSize',
 			'bold',
 			'italic',
-			'link',
-			'bulletedList',
 			'numberedList',
-			'|',
-			'indent',
-			'outdent',
-			'|',
-			'imageUpload',
-			'blockQuote',
+			'bulletedList',
 			'insertTable',
-			'mediaEmbed',
+			'imageUpload',
 			'undo',
 			'redo'
 		]
@@ -98,5 +97,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'zh'
 };
